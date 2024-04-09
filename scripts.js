@@ -19,9 +19,15 @@ function callWeatherAPI(lat,lon){
 
     const locationParagraph = document.getElementById('location');
     const iconWeather = document.getElementById('icon_weather');
+    const temp = document.getElementById('temperatura');
+    const temp_min = document.getElementById('temperatura_min');
+    const temp_max = document.getElementById('temperatura_max');
+    const description = document.getElementById('description');
+    const humidity = document.getElementById('humidity');
+    const speed = document.getElementById('speed');
 
     const api_key = '3c98783f23b44423d06cd3607435ce4c';
-    const base_url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&lang=pt_br&APPID=${api_key}`;
+    const base_url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&lang=pt_br&units=metric&APPID=${api_key}`;
 
     fetch(base_url)
     .then(response => {
@@ -32,7 +38,13 @@ function callWeatherAPI(lat,lon){
     })
     .then(data => {
         locationParagraph.textContent = data.name;
-        iconWeather.src = getIconAPI(data.weather[0].icon)
+        iconWeather.src = getIconAPI(data.weather[0].icon);
+        temp.textContent = `${parseInt(data.main.temp)} °C`;
+        temp_min.textContent = `${parseInt(data.main.temp_min)} °C`;
+        temp_max.textContent = `${parseInt(data.main.temp_max)} °C`;
+        description.textContent = data.weather[0].description;
+        humidity.textContent = `${data.main.humidity}%`
+        speed.textContent = `${data.wind.speed} km/h`
         console.log(data);
     })
     .catch(error => {
