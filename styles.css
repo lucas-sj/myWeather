@@ -75,7 +75,7 @@ body{
         justify-content: space-between;
         align-items: center;
         #temperatura{
-            font-size: 60px;
+            font-size: 55px;
             font-weight: 600;
         }
         #description{
