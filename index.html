@@ -3,61 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="scripts.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css">
     <title>Bem-vindo</title>
 </head>
 <body>
+    <div class="main_content">
         <header><!-- Conteudo com as informações de manhã, tarde e noite -->
-        <h1>Em desenvolvimento</h1>
-        <p>Ative sua localização</p>
-        <hr>
-        <div>
-            <div></div>
-            <div></div>
-        </div>
-    </header>
-    <section class="content">
-        <div><!-- Conteudo da cidade, dia em numero dia em segunda,terça... e mes -->
             <div>
-                <p id="location"></p>
-            </div>
-            <div></div>
-        </div>
-        <div>
-            <div><!-- Temperatura em graus e icone dependendo do clima-->
                 <div>
-                    <h1 id="temperatura"></h1>
-                    <h2 id="temperatura_min"></h2>
-                    <h3 id="temperatura_max"></h3>
+                    <input type="text" placeholder="Cidade" id="externalCity">
+                    <button id="getExternalLocation">Buscar</button>
                 </div>
                 <div>
-                    <img src="" id="icon_weather">
+                    <button id="getMyLocation">Minha localização <i class="fa-solid fa-location-dot"></i></button>
                 </div>
             </div>
-            <div><!-- Informação se está com nuvem ou insolarado -->
-                <label id="description"></label>
+        </header>
+        <section class="content">
+            <div><!-- Conteudo da cidade, dia em numero dia em segunda,terça... e mes -->
+                <div>
+                    <p id="location"></p>
+                </div>
+                <div></div>
             </div>
             <div>
-                <p id="humidity"></p>
-                <p id="speed"></p>
+                <div><!-- Temperatura em graus e icone dependendo do clima-->
+                    <div>
+                        <h1 id="temperatura"></h1>
+                        <h2 id="temperatura_min"></h2>
+                        <h3 id="temperatura_max"></h3>
+                    </div>
+                    <div>
+                        <img src="" id="icon_weather">
+                    </div>
+                </div>
+                <div><!-- Informação se está com nuvem ou insolarado -->
+                    <label id="description"></label>
+                </div>
+                <div>
+                    <p id="humidity"></p>
+                    <p id="speed"></p>
+                </div>
             </div>
-        </div>
-        <div><!-- Resumo sobre o clima. -->
-            <div>
-                <p></p>
+            <div><!-- Resumo sobre o clima. -->
+                <div>
+                    <p></p>
+                </div>
             </div>
-        </div>
 
-        <div> <!-- Sobre os próximos dias -->
-            <label for=""></label>
-        </div>
+            <div> <!-- Sobre os próximos dias -->
+                <label for=""></label>
+            </div>
 
-        <div> <!-- Sobre as proximas horas -->
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </section>
-    <footer></footer>
+            <div> <!-- Sobre as proximas horas -->
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </section>
+        <footer></footer>
+    </div>
+
+    <script src="scripts.js"></script>
 </body>
 </html>
