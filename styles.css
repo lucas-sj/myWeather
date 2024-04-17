@@ -11,12 +11,92 @@ body{
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background: linear-gradient(180deg, rgb(4, 57, 88) 0%, #0792e2 35%, rgba(0,212,255,1) 100%);
 }
 .main_content{
     width: 350px;
     max-width: 600px;
+    min-height: 300px;
     border-radius: 10px;
-    background-color: #c0c0c0;
+    padding: 10px;
+    background-color: #93caeb;
     color: #fff;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    box-shadow: #64646f33 0px 7px 29px 0px;
+}
+.externalSearch{
+    display: flex;
+
+    #externalCity{
+        height: 40px;
+        width: 80%;
+        margin-right: 10px;
+        padding-left: 10px;
+        border: none;
+        border-radius: 5px;
+    }
+    #getExternalLocation{
+        background-color: #0792e2;
+        color: #fff;
+        cursor: pointer;
+        width: 20%;
+        border: none;
+        border-radius: 5px;
+    }
+}
+.mySearch{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0792e2;
+    border-radius: 5px;
+    margin: 10px 0px;
+    cursor: pointer;
+    #iconMyLocation{
+        padding: 5px;
+        display: flex;
+        justify-content: center;
+        align-self: center;
+    }
+}
+.content{
+    width: 100%;
+    #sMyCity{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #sMyDate{
+        display: flex;
+        justify-content: center;
+    }
+    .mainTemp{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        #temperatura{
+            font-size: 60px;
+            font-weight: 600;
+        }
+        #description{
+            font-weight: 600;
+            font-size: 16px;
+            text-transform: capitalize;
+        }
+    }
+    .nextTemp{
+        display: flex;
+        width: 100%;
+        .tempView{
+            background-color: #0792e271;
+            border-radius: 10px;
+            margin: 10px;
+            box-shadow: #64646f33 0px 7px 29px 0px;
+            width: 50%;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
 }

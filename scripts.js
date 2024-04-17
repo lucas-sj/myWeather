@@ -4,6 +4,7 @@ const api_key = '3c98783f23b44423d06cd3607435ce4c';
 const btExternalLocation = document.querySelector("#getExternalLocation")
 const btGetMyLocation = document.querySelector("#getMyLocation");
 const txtExternalCity = document.querySelector("#externalCity");
+const currentDate = document.querySelector("#currentDate");
 
 const locationParagraph = document.getElementById('location');
 const iconWeather = document.getElementById('icon_weather');
@@ -32,7 +33,17 @@ function callWeatherAPI(url){
         description.textContent = data.weather[0].description;
         humidity.textContent = `${data.main.humidity}%`
         speed.textContent = `${data.wind.speed} km/h`
-        console.log(data);
+        // console.log(data);
+        const currentDate = document.querySelector("#currentDate");
+        const dataAtual = new Date();
+        const diasSemana = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado'];
+        const meses = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
+        const diaSemana = diasSemana[dataAtual.getDay()];
+        const dia = dataAtual.getDate();
+        const mes = meses[dataAtual.getMonth()];
+        const ano = dataAtual.getFullYear();
+        const dataFormatada = `${diaSemana} ${dia} de ${mes} de ${ano}`;
+        currentDate.textContent = dataFormatada;
     })
     .catch(error => {
       console.error('Erro ao fazer a requisição:', error);
@@ -66,7 +77,12 @@ btGetMyLocation.addEventListener("click", (e) => {
 btExternalLocation.addEventListener("click", (e) =>{
   e.preventDefault();
   const city = txtExternalCity.value;
-  const base_url_externallocation = `https://api.openweathermap.org/data/2.5/weather?q=${city}&lang=pt_br&units=metric&APPID=${api_key}`;
-  callWeatherAPI(base_url_externallocation)
+  if(city != ""){
+    const base_url_externallocation = `https://api.openweathermap.org/data/2.5/weather?q=${city}&lang=pt_br&units=metric&APPID=${api_key}`;
+    callWeatherAPI(base_url_externallocation)
+  }else{
+    alert('Preencha com uma cidade')
+  }
+
 })
 

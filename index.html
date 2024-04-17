@@ -9,37 +9,50 @@
 </head>
 <body>
     <div class="main_content">
-        <header><!-- Conteudo com as informações de manhã, tarde e noite -->
-            <div>
-                <div>
-                    <input type="text" placeholder="Cidade" id="externalCity">
-                    <button id="getExternalLocation">Buscar</button>
-                </div>
-                <div>
-                    <button id="getMyLocation">Minha localização <i class="fa-solid fa-location-dot"></i></button>
-                </div>
+        <div><!-- Conteudo com as informações de manhã, tarde e noite -->
+            <div class="externalSearch">
+                <input type="text" placeholder="Digite uma cidade" id="externalCity">
+                <button id="getExternalLocation"><i class="fa-solid fa-magnifying-glass"></i></button>
             </div>
-        </header>
-        <section class="content">
-            <div><!-- Conteudo da cidade, dia em numero dia em segunda,terça... e mes -->
+            <div class="mySearch">
                 <div>
-                    <p id="location"></p>
-                </div>
-                <div></div>
-            </div>
-            <div>
-                <div><!-- Temperatura em graus e icone dependendo do clima-->
                     <div>
-                        <h1 id="temperatura"></h1>
-                        <h2 id="temperatura_min"></h2>
-                        <h3 id="temperatura_max"></h3>
+                        <div id="getMyLocation">Minha localização</div>
+                        <div id="iconMyLocation"><i class="fa-solid fa-location-dot"></i></div>
                     </div>
-                    <div>
-                        <img src="" id="icon_weather">
+                </div>
+            </div>
+        </div>
+        <section class="content">
+
+            <div id="sMyCity"><!-- Conteudo da cidade, dia em numero dia em segunda,terça... e mes -->
+                <div><h1 id="location">Cidade</h1></div>
+            </div>
+            <div id="sMyDate">
+                <div><h3 id="currentDate">Data</h3></div>
+            </div>
+
+            <div><!-- Temperatura em graus e icone dependendo do clima-->
+                <div class="mainTemp">
+                    <div><p id="temperatura">0 °C</p></div>
+                    <div><img src="" id="icon_weather"></div>
+                    <p id="description"></p>
+                </div>
+                <div class="nextTemp">
+                    <div class="tempView">
+                        <div>
+                            <h2 id="temperatura_min">0 °C</h2>
+                            <div>Mínima</div>
+                        </div>
+                    </div>
+                    <div class="tempView">
+                        <div>
+                            <h2 id="temperatura_max">0 °C</h2>
+                            <div>Máxima</div>
+                        </div>
                     </div>
                 </div>
                 <div><!-- Informação se está com nuvem ou insolarado -->
-                    <label id="description"></label>
                 </div>
                 <div>
                     <p id="humidity"></p>
